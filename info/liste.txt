@@ -1,0 +1,59 @@
+Fiangonana
+
+TABLE	
+	*Olona
+		-idOlona
+		-nomOlona
+		-anneDeNaissance
+		-idStatut
+	*Statut
+		-idStatut
+		-nomStatut
+	*Rakitra
+		-idRakitra
+		-volaRakitra
+		-dateRakitra
+	*Trosa
+		-idTrosa
+		-idOlona
+		-volaTrosa
+		-dateTrosa
+	*View 
+		*ResumeRakitra
+			-AVG(valeurs) moyenne rakitra/mois
+			-group by mois
+			-order by anne decroissante
+		*infOlona
+			-idOlona
+			-idStatut
+			-idTrosa
+			-nomOlona
+			-anneDeNaissance
+			-volaTrosa
+			-dateTrosa
+			(order by idStatut)
+
+Fonction
+	(ok)*getFiangonana
+	(ok)*getMoyenneVolaParLahady
+	(...)*getInfOlona
+	*manomeDate_getVola(trosaina)
+		if(sum rakitra>trosaina)
+			----->--<-----
+		else
+			----->--<-----
+	(ok)*fonction compter dimanche pendant une anne 
+	*fonction mijery oe lahady fahafiry @ tona no misss anao
+
+
+
+BUT
+	ra missi mpandray ao @ pengonana mangataka vola de miteny le code oe azonao zao ny volanao na @ zao daty zao
+	Fonction ilaina
+		*getRakitra
+		*micalcul moyenne rakitra nandritra anizay lahady lasa rehetra(Argument daty)
+
+		SELECT EXTRACT(YEAR FROM dateRakitra) AS Annee, AVG(volaRakitra) AS Moyenne_Vola FROM Rakitra WHERE dateRakitra < '2024-03-15' GROUP BY EXTRACT(YEAR FROM dateRakitra);"
+
+25000000 03 juin
+30000000 27 sept

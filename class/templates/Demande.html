@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande</title>
+    <style>
+        label{
+            color: black;
+            font-family: "Fractul";
+        }
+        input{
+            height: 20px;
+            width: 140px;
+            margin-bottom: 10px;
+        }
+        select{
+            height: 30px;
+            width: 140px;
+            margin-bottom: 10px;
+        }
+        body
+        {
+            margin-top: 10%;
+            margin-left: 40%;
+            margin-right: 50%;
+        }
+        button
+        {
+            background-color: black;
+            color: aliceblue;
+            height: 40px;
+            width: 150px;
+            font-size: 20px;
+            border-style: none;
+        }
+        button:hover
+        {
+            background-color: rgb(248, 244, 244);
+            color: rgb(13, 13, 14);
+            border-style: ridge;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <label for="">Membres:</label><br>
+        <select name="membre" id="">
+            {% for mpivavaka in mpivavakas %}
+            <option value="{{ mpivavaka['idOlona'] }}">{{ mpivavaka['anarana'] }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="">vola:</label><br>
+        <input type="number" name="vola" placeholder="vola angatahana"><br>
+        <label for="">Daty demande:</label>
+        <input type="date" name="dateNow" id=""><br>
+        <button>Envoyer</button>
+    </form>
+    <a href="index.html">Retour</a>
+</body>
+</html>

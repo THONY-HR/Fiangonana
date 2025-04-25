@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mpivavaka</title>
+    <style>
+        label{
+            color: black;
+            font-family: "Fractul";
+        }
+        input{
+            height: 20px;
+            width: 140px;
+            margin-bottom: 10px;
+        }
+        body
+        {
+            margin-top: 10%;
+            margin-left: 40%;
+            margin-right: 50%;
+        }
+        button
+        {
+            background-color: black;
+            color: aliceblue;
+            height: 40px;
+            width: 150px;
+            font-size: 20px;
+            border-style: none;
+        }
+        button:hover
+        {
+            background-color: rgb(248, 244, 244);
+            color: rgb(13, 13, 14);
+            border-style: ridge;
+        }
+    </style>
+</head>
+<body>
+    <h1>Insertion</h1>
+    <form action="" method="post"> 
+        <label for="">Anarana:</label><br>
+        <input type="text" name="Anarana" id=""><br>
+        <label for="">Date de naissance</label><br>
+        <input type="date" name="dtn" id=""><br>
+        <label for="">Statu: </label><br>
+        <select name="Statu" id="">
+            {% for statut in statuts %}
+            <option value="{{ statut['idStatu'] }}">{{ statut['typeStatu'] }}</option>
+            {% endfor %}
+        </select>
+        <button>Valider</button>
+    </form>
+    <a href="index.html">Retour</a>
+</body>
+</html>
